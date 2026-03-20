@@ -13,9 +13,16 @@ func main() {
 	// 設定読み込み（exe と同じフォルダの data/config.toml）
 	exeDir, _ := filepath.Abs(filepath.Dir(os.Args[0]))
 
-	// ログをファイルに出力
-	logFile, err := os.OpenFile(filepath.Join(exeDir, "debug.log"), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0644)
-	if err == nil {
+	// ログをファイルに出力（デスクトップ or ホームディレクトリ）
+	homeDir, _ := os.UserHomeDir()
+	logPath := filepath.Join(homeDir, "Desktop", "razer_debug.log")
+	logFile, err := os.OpenFile(logPath, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0644)
+	if err != nil {
+		// デスクトップがなければホームに書く
+		logPath = filepath.Join(homeDir, "razer_debug.log")
+		logFile, _ = os.OpenFile(logPath, os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0644)
+	}
+	if logFile != nil {
 		log.SetOutput(logFile)
 		defer logFile.Close()
 	}
