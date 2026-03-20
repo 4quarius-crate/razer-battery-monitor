@@ -1,0 +1,45 @@
+# Razer Wireless Mouse PID List
+# Source: OpenRazer (https://github.com/openrazer/openrazer)
+# VID: 0x1532
+
+[devices]
+
+[[devices.mice]]
+name = "Razer Basilisk Ultimate (Wired/Receiver)"
+pid = 0x0177
+transaction_id = 0x1F
+
+[[devices.mice]]
+name = "Razer Basilisk Ultimate (Wireless)"
+pid = 0x0178
+transaction_id = 0x1F
+
+[[devices.mice]]
+name = "Razer DeathAdder V2 Pro (Wired)"
+pid = 0x007C
+transaction_id = 0x1F
+
+[[devices.mice]]
+name = "Razer DeathAdder V2 Pro (Wireless)"
+pid = 0x007D
+transaction_id = 0x1F
+
+[[devices.mice]]
+name = "Razer Viper Ultimate (Wired)"
+pid = 0x0152
+transaction_id = 0x1F
+
+[[devices.mice]]
+name = "Razer Viper Ultimate (Wireless)"
+pid = 0x0153
+transaction_id = 0x1F
+
+[[devices.mice]]
+name = "Razer Naga Pro (Wired)"
+pid = 0x0192
+transaction_id = 0x1F
+
+[[devices.mice]]
+name = "Razer Naga Pro (Wireless)"
+pid = 0x0193
+transaction_id = 0x1F

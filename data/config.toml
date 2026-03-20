@@ -1,0 +1,31 @@
+[monitor]
+# バッテリーポーリング間隔（秒）
+poll_interval_normal = 300      # 5分
+poll_interval_charging = 600    # 10分（充電中）
+poll_interval_low = 120         # 2分（低バッテリー時）
+
+[alert]
+# 低バッテリー通知を出す閾値（%）
+low_battery_threshold = 20
+# 通知を繰り返す間隔（秒）。同じ閾値で何度も通知しない
+notify_cooldown = 1800          # 30分
+
+[fps_guard]
+# ゲームフォーカス中はHID通信をスキップするか
+enabled = true
+# フォアグラウンドにあるときスキップするプロセス名リスト
+game_processes = [
+    "cs2.exe",
+    "csgo.exe",
+    "valorant.exe",
+    "r5apex.exe",
+    "overwatch.exe",
+    "overwatch2.exe",
+    "RainbowSix.exe",
+    "EscapeFromTarkov.exe",
+]
+
+[debug]
+# 生バイトをログに出力するか（実機確認用）
+dump_raw_bytes = false
+log_file = ""   # 空文字列はstderrへ出力
