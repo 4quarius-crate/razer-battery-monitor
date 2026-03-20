@@ -14,6 +14,7 @@ const (
 
 // knownMice は対応しているRazerワイヤレスマウスのPIDリスト
 var knownMice = map[uint16]mouseEntry{
+	0x0088: {"Razer Basilisk Ultimate", 0x1F},
 	0x0177: {"Razer Basilisk Ultimate (Wired/Receiver)", 0x1F},
 	0x0178: {"Razer Basilisk Ultimate (Wireless)", 0x1F},
 	0x007C: {"Razer DeathAdder V2 Pro (Wired)", 0x1F},
