@@ -12,6 +12,13 @@ func main() {
 
 	// 設定読み込み（exe と同じフォルダの data/config.toml）
 	exeDir, _ := filepath.Abs(filepath.Dir(os.Args[0]))
+
+	// ログをファイルに出力
+	logFile, err := os.OpenFile(filepath.Join(exeDir, "debug.log"), os.O_CREATE|os.O_WRONLY|os.O_TRUNC, 0644)
+	if err == nil {
+		log.SetOutput(logFile)
+		defer logFile.Close()
+	}
 	configPath := filepath.Join(exeDir, "data", "config.toml")
 	cfg, err := loadConfig(configPath)
 	if err != nil {
